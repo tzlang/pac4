@@ -126,20 +126,18 @@ public class RollerBall : MonoBehaviour
 	}
 
     void OnTriggerEnter(Collider other)
-	{
-        if (other.gameObject.tag == "Coin")
-    	{
-            if (mAudioSource != null && CoinSound != null)
-        	{
+		{
+        if (other.gameObject.tag == "Coin") {
+            if (mAudioSource != null && CoinSound != null) {
             	mAudioSource.PlayOneShot(CoinSound);
-        	}
-        	Destroy(other.gameObject);
-    	}
+        		}
+        		Destroy(other.gameObject);
+    		}
         if (other.gameObject.tag == "Enemy")
-    	{
+    		{
         	gameOverScreen.SetActive(true);
-    	}
-	}
+    		}
+		}
 
 
 }
